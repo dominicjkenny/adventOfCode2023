@@ -1,0 +1,19 @@
+{
+  "name": "advent-of-coding",
+  "version": "1.0.0",
+  "description": "code and files related to advent of coding challenges",
+  "main": "Day1.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dominicjkenny/adventOfCode2023.git"
+  },
+  "author": "Dominic Kenny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dominicjkenny/adventOfCode2023/issues"
+  },
+  "homepage": "https://github.com/dominicjkenny/adventOfCode2023#readme"
+}
