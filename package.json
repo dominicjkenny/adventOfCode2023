@@ -12,8 +12,8 @@
   },
   "author": "Dominic Kenny",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dominicjkenny/adventOfCode2023/issues"
+  "dependencies": {
+    "jest": "^29.7.0"
   },
-  "homepage": "https://github.com/dominicjkenny/adventOfCode2023#readme"
+  "type": "module"
 }

@@ -27,32 +27,43 @@ Adding these together produces 142.
 
 Consider your entire calibration document. What is the sum of all of the calibration values?
 */
+import * as fs from 'fs';
 
 // input: array of strings - no spaces, no special characters, no empty strings
 // output: 2 digit number
 
 // make array of .txt file
 const makeArr = () => {
-  const arr = [];
-  
+  const array = fs.readFileSync('./input.txt', 'utf-8').split('\n');
+  array.pop();
+  return array;
 }
+
+const arr = makeArr();
 
 // get calibrated, 2 digit number
 const calibrate = str => {
   let p1 = 0;
   let p2 = str.length - 1;
   while (p2 >= p1) {
-    if (typeof str[p1] !== 'number') p1++;
-    if (typeof str[p2] !== 'number') p2--;
-    if (typeof str[p1] === 'number' && typeof str[p2] === 'number') return parseInt(str[p1].toString() + str[p2].toString());
+    if (!Number(str[p1])) p1++;
+    if (!Number(str[p2])) p2--;
+    if (Number(str[p1]) && Number(str[p2])) {
+      const result = Number(str[p1].toString() + str[p2].toString());
+      return result;
+    }
   }
 }
 
 // get sum of all elements in array
-const consume = arr => {
+const consume = arr1 => {
   let sum = 0;
-  arr.forEach(el => {
-    sum += calibrate(el);
-  });
+  for (let i in arr1) {
+    const num = calibrate(arr1[i]);
+    sum += num;
+  };
+
   return sum;
 }
+
+console.log(consume(arr));
